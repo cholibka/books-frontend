@@ -1,0 +1,12 @@
+<mat-dialog-content>
+  <h3>Deleting book with id: {{ book.id }}</h3>
+  <p>
+    Are you sure you want to delete book
+    <span class="bold_font">{{ book.title }}</span
+    >? This action cannot be undone.
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Delete</button>
+</mat-dialog-actions>

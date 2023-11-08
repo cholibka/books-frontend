@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Book } from '../books-list/books-list.component';
+import { MatDialog } from '@angular/material/dialog';
+import { BookDeleteModalComponent } from '../book-delete-modal/book-delete-modal.component';
 
 @Component({
   selector: 'app-book-details',
@@ -14,7 +16,9 @@ export class BookDetailsComponent implements OnInit {
   color: string = '';
   constructor(
     private activatedRoute: ActivatedRoute,
-    private http: HttpClient
+    private http: HttpClient,
+    public dialog: MatDialog,
+    public router: Router
   ) {}
 
   ngOnInit(): void {
@@ -26,6 +30,23 @@ export class BookDetailsComponent implements OnInit {
     this.http
       .get(`https://localhost:7127/api/book/${this.bookId}`)
       .subscribe((data) => (this.book = data as Book));
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(BookDeleteModalComponent, {
+      data: this.book,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === true) {
+        this.http
+          .delete(`https://localhost:7127/api/book/${this.book.id}`)
+          .subscribe(() => {
+            console.log('Delete successful');
+            this.router.navigate(['/books']);
+          });
+      }
+    });
   }
 
   getRandomNumber() {

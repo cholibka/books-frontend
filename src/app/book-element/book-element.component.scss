@@ -19,3 +19,8 @@ mat-divider {
   min-height: 20rem;
   background-color: var(--color);
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+}

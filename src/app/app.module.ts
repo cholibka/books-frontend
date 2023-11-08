@@ -18,7 +18,16 @@ import { MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { BookDeleteModalComponent } from './book-delete-modal/book-delete-modal.component';
+import { AuthorDeleteModalComponent } from './author-delete-modal/author-delete-modal.component';
+import { BookAddComponent } from './book-add/book-add.component';
+import { AuthorAddComponent } from './author-add/author-add.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +36,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     BookElementComponent,
     AuthorElementComponent,
     BookDetailsComponent,
+    BookDeleteModalComponent,
+    AuthorDeleteModalComponent,
+    BookAddComponent,
+    AuthorAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +54,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTableModule,
     FlexLayoutModule,
     MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

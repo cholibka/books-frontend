@@ -1,24 +1,32 @@
 <div class="main_div">
-  <mat-card>
+  <mat-card *ngIf="isLoaded === true">
     <mat-card-content>
       <p>
         <span class="bold_font">Name: </span>{{ author.name }}
         {{ author.surname }}
       </p>
-      <p><span class="bold_font">Books: </span></p>
-      <ul>
-        <li *ngFor="let title of books">
-          <p>{{ title }}</p>
-        </li>
-      </ul>
+      <div *ngIf="books[0] !== ''">
+        <p><span class="bold_font">Books: </span></p>
+        <mat-list *ngFor="let title of books">
+          <mat-list-item>
+            <mat-icon matListItemIcon>book</mat-icon>
+            <div matListItemTitle>{{ title }}</div>
+          </mat-list-item>
+        </mat-list>
+      </div>
     </mat-card-content>
     <mat-card-actions align="end">
       <button mat-icon-button color="primary">
         <mat-icon>edit</mat-icon>
       </button>
-      <button mat-icon-button color="primary">
+      <button mat-icon-button color="primary" (click)="openDialog()">
         <mat-icon>delete</mat-icon>
       </button>
     </mat-card-actions>
+  </mat-card>
+  <mat-card *ngIf="isLoaded === false">
+    <mat-card-content>
+      <p>Loading...</p>
+    </mat-card-content>
   </mat-card>
 </div>

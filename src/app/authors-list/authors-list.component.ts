@@ -39,8 +39,7 @@ export class AuthorsListComponent implements OnInit {
   }
 
   viewAuthorDetails(author: Author) {
-    console.log(author);
-    let route = '/author/';
+    let route = '/author';
     this.router.navigate([route, author.id]);
   }
 }
