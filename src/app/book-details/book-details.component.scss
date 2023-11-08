@@ -1,0 +1,27 @@
+.box {
+  width: 13rem;
+  min-width: 13rem;
+  height: 25rem;
+  min-height: 25rem;
+  background-color: var(--color);
+}
+
+mat-card {
+  margin: 1rem;
+  min-width: 70vw;
+  max-width: 70vw;
+}
+
+mat-divider {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.details_container {
+  margin: 0.5rem;
+}
+
+.main_div {
+  display: flex;
+  justify-content: center;
+}

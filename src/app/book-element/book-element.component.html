@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-subtitle> {{ book.authorName }}</mat-card-subtitle>
+    <mat-card-title> {{ book.title }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <div class="box" style="--color: {{ color }}"></div>
+    <mat-divider></mat-divider>
+    <span class="bold_font">Description:</span> {{ book.description }}
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-icon-button color="primary" (click)="viewBookDetails(book)">
+      <mat-icon>more</mat-icon>
+    </button>
+    <button mat-icon-button color="primary">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button color="primary">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

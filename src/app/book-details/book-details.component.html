@@ -1,0 +1,34 @@
+<div class="main_div">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-subtitle> {{ book.authorName }}</mat-card-subtitle>
+      <mat-card-title> {{ book.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-divider></mat-divider>
+      <div fxLayout="row">
+        <div class="box" style="--color: {{ color }}" fxFlex="18"></div>
+        <div class="details_container">
+          <p>
+            <span class="bold_font">Description: </span>{{ book.description }}
+          </p>
+          <p>
+            <span class="bold_font">Release year: </span>{{ book.releaseYear }}
+          </p>
+          <p>
+            <span class="bold_font">Pages number: </span
+            >{{ book.numberOfPages }}
+          </p>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-icon-button color="primary">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="primary">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
