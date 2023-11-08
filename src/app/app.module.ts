@@ -28,6 +28,8 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material/list';
+import { AuthorEditComponent } from './author-edit/author-edit.component';
+import { BookEditComponent } from './book-edit/book-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +42,8 @@ import { MatListModule } from '@angular/material/list';
     AuthorDeleteModalComponent,
     BookAddComponent,
     AuthorAddComponent,
+    AuthorEditComponent,
+    BookEditComponent,
   ],
   imports: [
     BrowserModule,

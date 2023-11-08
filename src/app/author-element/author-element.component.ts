@@ -54,4 +54,8 @@ export class AuthorElementComponent implements OnInit {
       }
     });
   }
+
+  edit() {
+    this.router.navigate(['/author/edit/', this.authorId]);
+  }
 }

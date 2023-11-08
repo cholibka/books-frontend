@@ -47,7 +47,11 @@ export class BookElementComponent implements OnInit {
 
   viewBookDetails(book: Book) {
     console.log(book);
-    let route = '/book/';
+    let route = '/book/details/';
     this.router.navigate([route, book.id]);
+  }
+
+  edit() {
+    this.router.navigate(['/book/edit/', this.book.id]);
   }
 }

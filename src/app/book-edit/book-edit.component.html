@@ -1,0 +1,75 @@
+<div class="main_div">
+  <mat-card *ngIf="isLoaded === true">
+    <mat-card-header>
+      <h3>Edit book: {{ book.title }}</h3>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="bookForm">
+        <p>
+          <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Title" formControlName="title" />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>Description</mat-label>
+            <textarea
+              matInput
+              placeholder="Description"
+              formControlName="description"
+            >
+            </textarea>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>Year</mat-label>
+            <input
+              matInput
+              placeholder="Year"
+              formControlName="year"
+              type="number"
+            />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>Pages</mat-label>
+            <input
+              matInput
+              placeholder="Pages"
+              formControlName="pages"
+              type="number"
+            />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>Author</mat-label>
+            <mat-select formControlName="author">
+              <mat-option *ngFor="let author of authors" [value]="author.id">
+                {{ author.name }} {{ author.surname }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </p>
+      </form>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button
+        mat-icon-button
+        color="primary"
+        (click)="onSubmit()"
+        [disabled]="!bookForm.valid"
+      >
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card *ngIf="isLoaded === false">
+    <mat-card-content>
+      <p>Loading...</p>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -49,6 +49,10 @@ export class BookDetailsComponent implements OnInit {
     });
   }
 
+  edit() {
+    this.router.navigate(['/book/edit/', this.bookId]);
+  }
+
   getRandomNumber() {
     return Math.floor(Math.random() * 255);
   }
